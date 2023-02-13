@@ -5,7 +5,7 @@ metadata:
 spec:
   organizationName: vinaytalla20
   projectName: SampleProjects
-  updateType: repositories
-  updateKey: type
-  updateValue: BitBucket
+  updateType: variables
+  updateKey: SERVICE_NAME
+  updateValue: CRD_PATCH
   pipelineId: 3
