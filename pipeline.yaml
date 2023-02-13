@@ -1,0 +1,7 @@
+apiVersion: devops.azure.com/v1alpha1
+kind: Pipeline
+metadata:
+  name: pipeline-test
+spec:
+  organizationName: vinaytalla20
+  projectName: SampleProjects

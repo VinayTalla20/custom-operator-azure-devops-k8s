@@ -1,0 +1,11 @@
+apiVersion: devops.azure.com/v1alpha1
+kind: MutatePipeline
+metadata:
+  name: pipeline-mutate
+spec:
+  organizationName: vinaytalla20
+  projectName: SampleProjects
+  updateType: repositories
+  updateKey: type
+  updateValue: BitBucket
+  pipelineId: 3

@@ -1,0 +1,52 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: mutatepipelines.devops.azure.com
+spec:
+  scope: Cluster
+  group: devops.azure.com
+  names: 
+    kind: MutatePipeline
+    plural: mutatepipelines
+    shortNames: 
+    - mpl
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema: 
+        type: object
+        properties: 
+          spec: 
+            type: object
+            properties:
+              organizationName:
+                type: string
+              projectName: 
+                type: string
+              pipelineId:
+                type: integer
+              updateType:
+                type: string
+              updateKey: 
+                type: string
+              updateValue:
+                type: string
+    additionalPrinterColumns:
+    - name: ModifiedField
+      type: string
+      description: information regarding field that was modified
+      jsonPath: .spec.updateKey 
+    - name: ModifiedValue
+      description: pass the value to be update or mutated
+      type: string
+      jsonPath: .spec.updateValue  
+    - name: ID
+      type: integer
+      description: provides pipeline id for a specific pipeline within a project
+      jsonPath: .spec.pipelineId
+    - name: Organization
+      type: string
+      description: Oganization were these pipelines, projects are located
+      jsonPath: .spec.organizationName
