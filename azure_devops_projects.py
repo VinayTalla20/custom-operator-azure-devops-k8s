@@ -20,7 +20,7 @@ project_name = []
 project_visibility = []
 project_created = []
 
-personal_access_token = "p7h6u7kq3q7k2vq7yhv5tdbw6j5uw6j35vnnq5g3xopnoi3hncha"
+personal_access_token = ""
 
 
 def az_devops_projects(organization):
@@ -70,7 +70,7 @@ def az_pipelines_mutate(organization, update_type, update_value, update_key, id,
     repo_name = pipeline_info.configuration.additional_properties["repository"]["fullName"]
 
     filepath = file_path
-    token = "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"
+    token = ""
     git = Github(token)  # authenticating with token
     repo = git.get_repo(f"{repo_name}")  # provide the repository name with username
 
